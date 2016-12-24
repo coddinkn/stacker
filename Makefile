@@ -2,16 +2,17 @@ CXX=g++
 CFLAGS := -Wall
 
 vpath %.cpp src
+vpath %.h include
 
 .PHONY: all clean
 
 all: stacker
 
-stacker: obj/Stacker.o
+stacker: obj/Stacker.o obj/model/Model.o
 	$(CXX) $(CFLAGS) $^ -o bin/$@
 
 obj/%.o: %.cpp
-	$(CXX) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CFLAGS) -c $^ -I include -o $@
 
 clean:
-	rm -rf obj/* bin/*
+	rm -f obj/*.o bin/* obj/model/*.o obj/view/*.o obj/controller/*.o

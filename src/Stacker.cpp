@@ -1,8 +1,9 @@
 #include <iostream>
 
-using namespace std;
+#include "model/Model.h"
 
 int main(int argc, char** argv)
 {
-    cout << argv[0] << endl; 
+    Model model;
+    return model.getWidth() + 5;
 }
