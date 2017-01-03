@@ -2,7 +2,7 @@ CXX=g++
 CFLAGS := -Wall
 
 vpath %.cpp src
-vpath %.h include
+vpath %.hpp include
 
 .PHONY: all clean
 
